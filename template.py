@@ -14,6 +14,6 @@ target = sys.argv[2]
 with open(source, 'r') as handle:
     template = jinja2.Template(handle.read())
 
-output = template.render(env=os.environ)
+with open(target, 'w') as handle:
+    handle.write(template.render(env=os.environ))
 
-print(output)
