@@ -3,4 +3,3 @@
 set -euxo pipefail
 
 pip install --user awscli jinja2
-
