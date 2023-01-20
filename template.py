@@ -12,7 +12,7 @@ source = sys.argv[1]
 target = sys.argv[2]
 
 with open(source, 'r') as handle:
-    template = jinja2.Template(handle.read())
+    template = jinja2.Template(handle.read(), undefined=jinja2.StrictUndefined)
 
 with open(target, 'w') as handle:
     handle.write(template.render(env=os.environ))
